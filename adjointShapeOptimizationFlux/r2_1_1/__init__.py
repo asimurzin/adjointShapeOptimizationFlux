@@ -46,10 +46,10 @@ def zeroCells( vf, cells ):
     from Foam.template import GeometricField
     
     value = None
-    if vf.__class__ == GeometricField( ref.scalar, ref.volMesh ) or vf.__class__ == GeometricField( ref.scalar, ref.volMesh, Holder = True ) :
+    if vf.__class__ == GeometricField( ref.scalar, ref.volMesh ) or vf.__class__ == man.GeometricField( ref.scalar, ref.volMesh ) :
        value = 0.0
 
-    if vf.__class__ == GeometricField( ref.vector, ref.volMesh ) or vf.__class__ == GeometricField( ref.vector, ref.volMesh,  Holder = True ):
+    if vf.__class__ == GeometricField( ref.vector, ref.volMesh ) or vf.__class__ == man.GeometricField( ref.vector, ref.volMesh ):
        value = ref.vector( 0.0, 0.0, 0.0 )
 
     for element in range( cells.size() ):
